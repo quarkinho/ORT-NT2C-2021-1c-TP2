@@ -1,16 +1,31 @@
+  
 <!DOCTYPE html>
 <html>
     <body>
         <h1> Bienvenidos !</h1>
         <script>
             console.log("Hola!")
+	// RESOLUCION SANTIAGO CERSOSIMO 2-1C
 
-            let nombres = ['Adriana', 'Benito', 'Claudia', 'Daniel', 'Estefania', 'Fernando','Gabriela','Hugo']
-            nombres.forEach(function(nombre) {
-                console.log(nombre)
-            }
-            )
+	let nombres = ['Adriana', 'Benito', 'Claudia', 'Daniel', 'Estefania', 'Fernando','Gabriela','Hugo']
+	    nombres.forEach(function(nombre) {
+	      console.log(nombre)
+	      })
 
+
+	let crearArray =function(arrayIntroducido){
+	  let nuevoArray = arrayIntroducido.map((elemento) =>{
+	    return {nombre: elemento,
+        	    longitud: elemento.length}
+		})
+	  return nuevoArray
+	}
+
+	let completo = crearArray(nombres)
+	// COMO OBJETOS
+	completo.forEach((elemento)=>{console.log(elemento)})
+	// COMO TEXTO
+	console.log("RTA: ", JSON.stringify(completo))
         </script>
     </body>
 </html>
